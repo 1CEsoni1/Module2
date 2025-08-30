@@ -1,0 +1,22 @@
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model RepairRequest {
+  id            String   @id @default(cuid())
+  equipmentName String
+  equipmentCode String
+  location      Json
+  reporter      String
+  status        String
+  priority      String
+  notes         String?
+  reportDate    DateTime
+  completedDate DateTime?
+  assignedTo    String?
+}
