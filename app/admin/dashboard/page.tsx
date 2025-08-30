@@ -793,7 +793,7 @@ function AddRepairForm({ onClose, onSuccess }: { onClose: () => void; onSuccess:
           <Label htmlFor="assignTo">มอบหมายให้ช่าง</Label>
           <Select
             value={formData.assignedTo}
-            onValueChange={(value) => setFormData({ ...formData, assignedTo: value })}
+            onValueChange={(value: string) => setFormData({ ...formData, assignedTo: value })}
           >
             <SelectTrigger>
               <SelectValue placeholder="เลือกช่าง" />
